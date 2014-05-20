@@ -9,8 +9,8 @@ namespace EulerProject.Problems
     {
         public object Solve()
         {
-            int max = 1000000;
-            int sum = 0;
+            const int max = 1000000;
+            var sum = 0;
 
             for (int n = 1; n < max; n++)
             {
