@@ -202,5 +202,13 @@ namespace EulerProject
             }
             return sum > num ? NumberType.Abundant : NumberType.Deficient;
         }
+
+        public static int RotateDigits(int num)
+        {
+            var str = num.ToString(CultureInfo.InvariantCulture);
+            var first = str.Substring(str.Length - 1, 1);
+            var sub = str.Substring(0, str.Length - 1);
+            return int.Parse(first + sub);
+        }
     }
 }
