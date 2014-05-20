@@ -32,6 +32,14 @@ namespace EulerProject
             return forward.Equals(reverse);
         }
 
+        public static bool IsPalindrome(string num)
+        {
+            var temp = num.Reverse().ToArray();
+            var reverse = new string(temp);
+
+            return num.Equals(reverse);
+        }
+
         public static double SumOfSquares(int maxNumber)
         {
             double result = 0;
