@@ -62,6 +62,10 @@ namespace EulerProject
 
         public static bool IsPrime(int num)
         {
+            if (num <= 1)
+            {
+                return false;
+            }
             for (int i = 2; i <= Math.Sqrt(num); i++)   // i < num
             {
                 if (num % i == 0)

@@ -7,7 +7,7 @@ namespace EulerProject
     {
         static void Main(string[] args)
         {
-            IProblem problem = new Problem35();
+            IProblem problem = new Problem37();
             Debug.WriteLine(string.Format("\n====================\nSolving {0}...\n====================", problem.GetType().Name));
             object answer = problem.Solve();
 
