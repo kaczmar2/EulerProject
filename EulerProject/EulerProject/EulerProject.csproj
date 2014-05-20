@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{76E3AE01-D09E-4BA1-944A-30A02CC694B5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EulerProject</RootNamespace>
+    <AssemblyName>EulerProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Problems\Problem12.cs" />
+    <Compile Include="Problems\Problem16.cs" />
+    <Compile Include="Problems\Problem20.cs" />
+    <Compile Include="Problems\Problem21.cs" />
+    <Compile Include="Problems\Problem19.cs" />
+    <Compile Include="Problems\Problem23.cs" />
+    <Compile Include="Problems\Problem24.cs" />
+    <Compile Include="Problems\Problem25.cs" />
+    <Compile Include="Common\IProblem.cs" />
+    <Compile Include="Problems\Problem18.cs" />
+    <Compile Include="Problems\Problem01.cs" />
+    <Compile Include="Problems\Problem22.cs" />
+    <Compile Include="Problems\Problem10.cs" />
+    <Compile Include="Problems\Problem11.cs" />
+    <Compile Include="Problems\Problem13.cs" />
+    <Compile Include="Problems\Problem14.cs" />
+    <Compile Include="Problems\Problem15.cs" />
+    <Compile Include="Problems\Problem17.cs" />
+    <Compile Include="Problems\Problem02.cs" />
+    <Compile Include="Problems\Problem28.cs" />
+    <Compile Include="Problems\Problem29.cs" />
+    <Compile Include="Problems\Problem03.cs" />
+    <Compile Include="Problems\Problem30.cs" />
+    <Compile Include="Problems\Problem34.cs" />
+    <Compile Include="Problems\Problem04.cs" />
+    <Compile Include="Problems\Problem48.cs" />
+    <Compile Include="Problems\Problem05.cs" />
+    <Compile Include="Problems\Problem06.cs" />
+    <Compile Include="Problems\Problem07.cs" />
+    <Compile Include="Problems\Problem08.cs" />
+    <Compile Include="Problems\Problem09.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Input\names.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
