@@ -234,5 +234,17 @@ namespace EulerProject
             var sub = str.Substring(0, str.Length - 1);
             return int.Parse(first + sub);
         }
+
+        public static int DigitalSum(BigInteger n)
+        {
+            int sum = 0;
+
+            foreach (var c in n.ToString().ToCharArray())
+            {
+                var d = int.Parse(c.ToString(CultureInfo.InvariantCulture));
+                sum += d;
+            }
+            return sum;
+        }
     }
 }
