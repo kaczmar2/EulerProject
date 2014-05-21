@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace EulerProject.Problems
@@ -21,13 +20,10 @@ namespace EulerProject.Problems
                     if (Common.IsPalindrome(result))
                     {
                         palindromeList.Add(result);
-                        //Debug.WriteLine("{0} * {1} = {2}", i, j, result);
                     }
                 }
             }
-
             int largest = palindromeList.Max();
-            Debug.WriteLine("Largest palindrome of two three-digit numbers: {0}", largest);
             return largest;
         }
     }

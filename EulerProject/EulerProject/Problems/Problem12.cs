@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-
+﻿
 namespace EulerProject.Problems
 {
     /// <summary>
@@ -21,7 +20,6 @@ namespace EulerProject.Problems
                 num++;
             } while (numDivisors <= target);
 
-            Debug.WriteLine(" [num divisors: {0}]", numDivisors);
             return tn;
         }
     }

@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-
+﻿
 namespace EulerProject.Problems
 {
     /// <summary>
@@ -17,7 +16,6 @@ namespace EulerProject.Problems
 
                 if (t == a && a != b)
                 {
-                    //Debug.WriteLine("{0} {1}", a, b);
                     sum += (a + b);
                 }
             }

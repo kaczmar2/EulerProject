@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace EulerProject.Problems
 {
@@ -39,11 +38,9 @@ namespace EulerProject.Problems
                         largestCount = count;
                         a1 = a;
                         a2 = b;
-                        //Debug.WriteLine("a={0} b={1}: {2}", a1, a2, count);
                     }
                 }
             }
-            //Debug.WriteLine("a={0} b={1}: {2}", a1, a2, largestCount);
             return a1 * a2;
         }
     }

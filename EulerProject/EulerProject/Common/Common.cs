@@ -121,10 +121,14 @@ namespace EulerProject
             string words = "";
 
             if (number == 0)
+            {
                 return "zero";
+            }
 
             if (number < 0)
+            {
                 return "minus " + NumberToWords(Math.Abs(number));
+            }
 
             if ((number / 1000000) > 0)
             {
@@ -147,7 +151,9 @@ namespace EulerProject
             if (number > 0)
             {
                 if (words != "")
+                {
                     words += "and ";
+                }
 
                 var unitsMap = new[] { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
                 var tensMap = new[] { "zero", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };

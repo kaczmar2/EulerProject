@@ -8,7 +8,7 @@ namespace EulerProject.Problems
     /// </summary>
     class Problem28 : IProblem
     {
-        const int Dim = 1001;   // must be odd!;
+        private const int Dim = 1001;   // must be odd!;
         static int total = 1;
         static readonly int[,] grid = new int[Dim, Dim];
         static readonly Coords coords = new Coords();
@@ -18,10 +18,10 @@ namespace EulerProject.Problems
             const int maxSeries = Dim;
             var m = 1;
 
+            // build grid
             coords.X = coords.Y = (Dim - 1) / 2;
             grid[coords.X, coords.Y] = total;
             total++;
-
             do
             {
                 MoveRight(m, coords.X, coords.Y);
@@ -32,8 +32,8 @@ namespace EulerProject.Problems
                 m++;
             } while (m < maxSeries);
             MoveRight(m - 1, coords.X, coords.Y);
+            // end build grid
 
-            // debug
             //PrintGrid();
 
             var result = CalculateDiagonalSum();
@@ -108,9 +108,9 @@ namespace EulerProject.Problems
                 {
                     int val = grid[i, j];
                     string disp = val.ToString(CultureInfo.InvariantCulture).PadLeft(padding);
-                    Debug.Write(string.Format("{0} ", disp));
+                    Trace.Write(string.Format("{0} ", disp));
                 }
-                Debug.WriteLine("");
+                Trace.WriteLine("");
             }
         }
 

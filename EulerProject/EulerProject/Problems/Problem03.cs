@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace EulerProject.Problems
@@ -32,7 +31,6 @@ namespace EulerProject.Problems
                         
                     }
                     
-                    Debug.WriteLine("{0} {1}", i, prime ? "(prime)" : "");
                     if (prime)
                     {
                         primes.Add(i);

@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.Numerics;
+﻿using System.Numerics;
 
 namespace EulerProject.Problems
 {
@@ -22,11 +21,8 @@ namespace EulerProject.Problems
                 if (fibNumber % 2 == 0)
                 {
                     sum += fibNumber;
-                    Debug.WriteLine(fibNumber);
                 }
             }
-            Debug.WriteLine("Total: {0}", sum);
-
             return sum;
         }
     }

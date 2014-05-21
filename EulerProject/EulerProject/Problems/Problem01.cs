@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-
+﻿
 namespace EulerProject.Problems
 {
     /// <summary>
@@ -19,8 +18,6 @@ namespace EulerProject.Problems
                     total += n;
                 }
             }
-
-            Debug.WriteLine("Total: {0}", total);
             return total;
         }
     }

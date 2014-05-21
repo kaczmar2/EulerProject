@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.Text;
+﻿using System.Text;
 
 namespace EulerProject.Problems
 {
@@ -19,7 +18,6 @@ namespace EulerProject.Problems
                 sb.Append(word);
             }
             sb.Replace("-", "").Replace(" ", "");   // strip spaces and dashes for this problem's answer to be correct
-            //Debug.WriteLine(sb.ToString());
             int result = sb.ToString().Length;
             return result;
         }

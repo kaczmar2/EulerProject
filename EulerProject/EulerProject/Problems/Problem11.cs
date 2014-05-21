@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace EulerProject.Problems
@@ -40,7 +39,6 @@ namespace EulerProject.Problems
             {
                 for (int j = 0; j < 20; j++)
                 {
-                    //Debug.WriteLine("Testing position [{0},{1}]", i, j);
                     products.Add(FindHorizontal(i, j));
                     products.Add(FindVertical(i, j));
                     products.Add(FindDiagonalF(i, j));

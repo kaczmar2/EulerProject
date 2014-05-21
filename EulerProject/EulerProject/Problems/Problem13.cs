@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.Linq;
+﻿using System.Linq;
 using System.Numerics;
 
 namespace EulerProject.Problems
@@ -122,9 +121,7 @@ namespace EulerProject.Problems
                 var val = BigInteger.Parse(n);
                 sum += val;
             }
-
             var result = new string(sum.ToString().Take(t).ToArray());
-            Debug.WriteLine(sum);
             return result;
         }
     }

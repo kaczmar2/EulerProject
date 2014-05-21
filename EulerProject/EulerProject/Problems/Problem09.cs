@@ -24,19 +24,17 @@ namespace EulerProject.Problems
                     if (a < b && b < c)
                     {
                         triplets.Add(new Tuple<int, int, int>(a, b, c));
-                        //Debug.WriteLine("{0} {1} {2}", a, b, c);
                     }
                 }
             }
 
             foreach (var triplet in triplets)
             {
-                bool check = Math.Pow(triplet.Item1, 2) + Math.Pow(triplet.Item2, 2) == Math.Pow(triplet.Item3, 2);
+                bool check = (Math.Pow(triplet.Item1, 2) + Math.Pow(triplet.Item2, 2)).Equals(Math.Pow(triplet.Item3, 2));
                 if (check)
                 {
                     
                     product = triplet.Item1 * triplet.Item2 * triplet.Item3;
-                    Debug.WriteLine("{0} {1} {2}", triplet.Item1, triplet.Item2, triplet.Item3);
                     break;  // there is only one
                 }
             }
