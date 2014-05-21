@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace EulerProject.Problems
 {
@@ -13,16 +12,16 @@ namespace EulerProject.Problems
             const int target = 500;
             var num = 1;
             long tn;
-            List<long> numDivisors;
+            long numDivisors;
 
             do
             {
                 tn = Common.GetTriangularNumber(num);
-                numDivisors = Common.GetDivisors(tn);
+                numDivisors = Common.GetDivisorsCount(tn);
                 num++;
-            } while (numDivisors.Count <= target);
+            } while (numDivisors <= target);
 
-            Debug.WriteLine(" [num divisors: {0}]", numDivisors.Count);
+            Debug.WriteLine(" [num divisors: {0}]", numDivisors);
             return tn;
         }
     }

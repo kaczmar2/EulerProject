@@ -186,7 +186,7 @@ namespace EulerProject
 
         public static List<long> GetDivisors(long num)
         {
-            var divisors = new List<long>();// {1, num}; // prob 12, 23
+            var divisors = new List<long> {1, num};
             for (int d = 2; d <= num / 2; d++)
             {
                 if (num % d == 0)
@@ -195,6 +195,20 @@ namespace EulerProject
                 }
             }
             return divisors;
+        }
+
+        public static long GetDivisorsCount(long num)
+        {
+            var count = 0;
+            var sqrt = Math.Round(Math.Sqrt(num));
+            for (int d = 1; d < sqrt; d++)
+            {
+                if (num % d == 0)
+                {
+                    count += 2;
+                }
+            }
+            return count;
         }
 
         public static NumberType GetNumberType(int num)
