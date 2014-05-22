@@ -257,5 +257,21 @@ namespace EulerProject
             }
             return sum;
         }
+
+        /// <summary>
+        /// Used in problems 18 and 67. Convert input data to Jagged array for processing
+        /// </summary>
+        /// <param name="input">input data</param>
+        /// <returns>Jagged array containing the data for processing</returns>
+        public static int[][] ConvertInputToMap(string input)
+        {
+            string[] levels = input.Split('\n');
+            var map = new int[levels.Length][];
+            for (int i = 0; i < levels.Length; i++)
+            {
+                map[i] = levels[i].Split(' ').Select(n => Convert.ToInt32(n)).ToArray();
+            }
+            return map;
+        }
     }
 }
