@@ -273,5 +273,17 @@ namespace EulerProject
             }
             return map;
         }
+
+        /// <summary>
+        /// Gets total word value sum where A=1, B=2, etc.
+        /// Only works for uppercase letters (they are converted)
+        /// </summary>
+        /// <param name="word"></param>
+        /// <returns></returns>
+        public static int GetWordValue(string word)
+        {
+            int val = word.ToUpper().Sum(c => (int)c - 64);
+            return val;
+        }
     }
 }
