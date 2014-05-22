@@ -246,5 +246,16 @@ namespace EulerProject
             }
             return sum;
         }
+
+        public static double GetSquareOfDigits(double n)
+        {
+            double sum = 0;
+            var chars = n.ToString(CultureInfo.InvariantCulture).ToCharArray();
+            foreach (var c in chars)
+            {
+                sum += Math.Pow(double.Parse(c.ToString(CultureInfo.InvariantCulture)), 2);
+            }
+            return sum;
+        }
     }
 }
