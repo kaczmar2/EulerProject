@@ -285,5 +285,31 @@ namespace EulerProject
             int val = word.ToUpper().Sum(c => (int)c - 64);
             return val;
         }
+
+        /// <summary>
+        /// Returns the count of ways we can sum  s[0...m-1] coins to get sum n
+        /// http://www.geeksforgeeks.org/dynamic-programming-set-7-coin-change/
+        /// </summary>
+        /// <param name="s">Coin set</param>
+        /// <param name="m">Length of coin set 's'</param>
+        /// <param name="n">Amount we need to make change for</param>
+        /// <returns>Count of all possible coin sums</returns>
+        public static int CountCoinSums(int[] s, int m, int n)
+        {
+            // If n is 0 then there is 1 solution (do not include any coin)
+            if (n == 0)
+                return 1;
+
+            // If n is less than 0 then no solution exists
+            if (n < 0)
+                return 0;
+
+            // If there are no coins and n is greater than 0, then no solution exist
+            if (m <= 0 && n >= 1)
+                return 0;
+
+            // count is sum of solutions (i) including S[m-1] (ii) excluding S[m-1]
+            return CountCoinSums(s, m - 1, n) + CountCoinSums(s, m, n - s[m - 1]);
+        }
     }
 }
