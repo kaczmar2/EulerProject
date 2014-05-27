@@ -15,7 +15,7 @@ namespace EulerProject.Problems
 
             do
             {
-                tn = Common.GetTriangularNumber(num);
+                tn = (long) Common.GetTriangularNumber(num);
                 numDivisors = Common.GetDivisorsCount(tn);
                 num++;
             } while (numDivisors <= target);

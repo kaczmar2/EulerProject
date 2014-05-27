@@ -66,7 +66,7 @@ namespace EulerProject
             {
                 return false;
             }
-            for (int i = 2; i <= Math.Sqrt(num); i++)   // i < num
+            for (int i = 2; i <= Math.Sqrt(num); i++)   // i < n
             {
                 if (num % i == 0)
                 {
@@ -180,14 +180,70 @@ namespace EulerProject
             return input;
         }
 
-        public static long GetTriangularNumber(int num)
+        /// <summary>
+        /// Returns the nth triangular number
+        /// </summary>
+        /// <param name="n">Nth trianglar number</param>
+        /// <returns>Value of the nth triangular number</returns>
+        public static ulong GetTriangularNumber(int n)
         {
-            int sum = 0;
-            for (int i = 1; i <= num; i++)
-            {
-                sum += i;
-            }
-            return sum;
+            return (ulong) (n*(n + 1)/2);
+        }
+
+        /// <summary>
+        /// Returns the nth pentagonal number
+        /// </summary>
+        /// <param name="n">Nth pentagonal number</param>
+        /// <returns>Pn, value of the nth pentagonal number</returns>
+        public static ulong GetPentagonalNumber(int n)
+        {
+            return (ulong) (n*(3*n - 1)/2);
+        }
+
+        /// <summary>
+        /// Returns the nth hexagonal number
+        /// </summary>
+        /// <param name="n">Nth hexagonal number</param>
+        /// <returns>Hn, value of the nth hexagonal number</returns>
+        public static ulong GetHexagonalNumber(int n)
+        {
+            return (ulong) (n*(2*n - 1));
+        }
+
+        /// <summary>
+        /// Tests if a given number x is a triangular number
+        /// http://en.wikipedia.org/wiki/Triangular_number
+        /// </summary>
+        /// <param name="x">The number to test</param>
+        /// <returns>True if the given number is triangular</returns>
+        public static bool IsTriangularNumber(ulong x)
+        {
+            var sqrt = Math.Sqrt(1+8*x);
+            return sqrt.Equals(Math.Truncate(sqrt));
+        }
+
+        /// <summary>
+        /// Tests if a given number x is a pentagonal number
+        /// </summary>
+        /// <param name="x">The number to test</param>
+        /// <returns>True if the given number is pentagonal</returns>
+        public static bool IsPentagonalNumber(ulong x)
+        {
+            var sqrt = Math.Sqrt(24*x+1);
+            var ngc = (sqrt % 6).Equals(5);
+            return sqrt.Equals(Math.Truncate(sqrt)) && ngc;
+        }
+
+        /// <summary>
+        /// Tests if a given number x is a hexagonal number
+        /// http://en.wikipedia.org/wiki/Hexagonal_number
+        /// </summary>
+        /// <param name="x">The number to test</param>
+        /// <returns>True if the given number is hexagonal</returns>
+        public static bool IsHexagonalNumber(ulong x)
+        {
+            var n = (Math.Sqrt(8*x + 1) + 1)/4;
+            return n.Equals(Math.Truncate(n));
         }
 
         public static List<long> GetDivisors(long num)

@@ -11,9 +11,9 @@ namespace EulerProject.Problems
         public object Solve()
         {
             const string file = @"input\words.txt";
-            long tn;
+            ulong tn;
             int n = 1;
-            var triNumbers = new List<long>();
+            var triNumbers = new List<ulong>();
 
             string input = Common.GetFileInput(file);
             input = input.Replace("\"", "");    // remove quotes
@@ -29,10 +29,10 @@ namespace EulerProject.Problems
                 tn = Common.GetTriangularNumber(n);
                 triNumbers.Add(tn);
                 n++;
-            } while (tn < largestWordScore);
+            } while (tn < (decimal) largestWordScore);
 
             // find any word that matches one of the triangular numbers
-            int count = wordScores.Count(i => triNumbers.Contains(i));
+            int count = wordScores.Count(i => triNumbers.Contains((ulong) i));
             return count;
         }
     }
