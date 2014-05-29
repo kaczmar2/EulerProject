@@ -9,20 +9,23 @@ namespace EulerProject.Problems
     {
         public object Solve()
         {
-            const int numTerms = 32;    // the first 32 terms in the sequence do not exceed four million (this was found by running this program and observing output)
+            const int max = 4000000;
             BigInteger sum = 0;
+            BigInteger fibNumber;
+            int i = 0;
 
-            // print all even terms that don't exceed 4 million
-            for (int i = 0; i <= numTerms; i++)
+            do
             {
-                BigInteger fibNumber = Common.Fibonacci(i);
+                i++;
+                fibNumber = Common.Fibonacci(i);
 
                 // find the sum of only the even-valued terms
                 if (fibNumber % 2 == 0)
                 {
                     sum += fibNumber;
                 }
-            }
+            } while (fibNumber <= max);
+
             return sum;
         }
     }

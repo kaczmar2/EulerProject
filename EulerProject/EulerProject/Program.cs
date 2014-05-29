@@ -12,7 +12,7 @@ namespace EulerProject
             // SOLVE A SINGLE PROBLEM
             const int pNumber = 33;
             var sw = new Stopwatch();
-            string pFullName = string.Concat("EulerProject.Problems.Problem", pNumber.ToString(CultureInfo.InvariantCulture));
+            string pFullName = string.Concat("EulerProject.Problems.Problem", pNumber.ToString("D2"));
             var pDisplayName = pFullName.Substring(pFullName.LastIndexOf('.') + 1, pFullName.Length - 1 - pFullName.LastIndexOf('.'));
             var problem = (IProblem)Assembly.GetEntryAssembly().CreateInstance(pFullName);
             Trace.Write(string.Format("Solving {0}... ", pDisplayName));
