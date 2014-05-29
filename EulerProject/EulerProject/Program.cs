@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using EulerProject.Problems;
+﻿using EulerProject.Problems;
 using System.Diagnostics;
 using System.Reflection;
 
