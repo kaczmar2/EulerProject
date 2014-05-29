@@ -367,5 +367,26 @@ namespace EulerProject
             // count is sum of solutions (i) including S[m-1] (ii) excluding S[m-1]
             return CountCoinSums(s, m - 1, n) + CountCoinSums(s, m, n - s[m - 1]);
         }
+
+        /// <summary>
+        /// Finds the greatest common divisor of a set of numbers
+        /// </summary>
+        /// <param name="numbers">Set of numbers to test</param>
+        /// <returns>Value of the gcd between the set of numbers</returns>
+        public static int Gcd(int[] numbers)
+        {
+            return numbers.Aggregate(Gcd);
+        }
+
+        /// <summary>
+        /// Finds the greatest common divisor of two numbers
+        /// </summary>
+        /// <param name="a">First number to test</param>
+        /// <param name="b">Second number to test</param>
+        /// <returns>Value of the gcd between the two numbers</returns>
+        public static int Gcd(int a, int b)
+        {
+            return b == 0 ? a : Gcd(b, a % b);
+        }
     }
 }
