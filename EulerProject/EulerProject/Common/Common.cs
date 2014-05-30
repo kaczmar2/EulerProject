@@ -66,7 +66,7 @@ namespace EulerProject
             {
                 return false;
             }
-            for (int i = 2; i <= Math.Sqrt(num); i++)   // i < n
+            for (int i = 2; i <= Math.Round(Math.Sqrt(num)); i++)   // i < n
             {
                 if (num % i == 0)
                 {
@@ -387,6 +387,37 @@ namespace EulerProject
         public static int Gcd(int a, int b)
         {
             return b == 0 ? a : Gcd(b, a % b);
+        }
+
+        /// <summary>
+        /// Finds if a n-digit number is pandigital.
+        /// A n-digit number is pandigital if it makes use of all the digits 1 to n exactly once; for example, 
+        /// the 5-digit number, 15234, is 1 through 5 pandigital.
+        /// </summary>
+        /// <param name="n">Number to test</param>
+        /// <returns>True if n is pandigital</returns>
+        public static bool IsPandigital(int n)
+        {
+            bool isPandigital = false;
+            var chars = new List<char>(n.ToString(CultureInfo.InvariantCulture).ToCharArray());
+            var len = chars.Count;
+            
+            if (len > 9 || chars.Contains('0'))
+            {
+                return false;
+            }
+            
+            chars.Sort();
+            for (int i = 0; i < len; i++)
+            {
+                isPandigital = true;
+                if (int.Parse(chars[i].ToString(CultureInfo.InvariantCulture)) != i + 1)
+                {
+                    isPandigital = false;
+                    break;
+                }
+            }
+            return isPandigital;
         }
     }
 }
