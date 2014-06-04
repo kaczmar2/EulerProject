@@ -419,5 +419,27 @@ namespace EulerProject
             }
             return isPandigital;
         }
+
+        /// <summary>
+        /// Compares integer values to see if they have the same digits in a different order
+        /// </summary>
+        /// <param name="nums">Collection of integers to test</param>
+        /// <returns>True if numbers contain the same digits</returns>
+        public static bool ContainsSameDigits(int[] nums)
+        {
+            for (int i = 1; i < nums.Length; i++)
+            {
+                var prev = nums[i - 1];
+                var curr = nums[i];
+                var prevChars = new HashSet<char>(prev.ToString(CultureInfo.InvariantCulture).ToCharArray());
+                var currChars = new HashSet<char>(curr.ToString(CultureInfo.InvariantCulture).ToCharArray());
+                
+                if (!prevChars.SetEquals(currChars))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }
