@@ -464,5 +464,21 @@ namespace EulerProject
         {
             return n % 2 != 0;
         }
+
+        /// <summary>
+        /// Given a number, find the next closet number that is a prime.
+        /// </summary>
+        /// <param name="n">The number to test</param>
+        /// <returns>The closest number, greater than n, that is a prime.</returns>
+        public static int GetNextPrime(int n)
+        {
+            int i = n;
+            while (true)
+            {
+                i++;
+                if (IsPrime(i)) break;
+            }
+            return i;
+        }
     }
 }
