@@ -9,7 +9,7 @@ namespace EulerProject
         static void Main(string[] args)
         {
             // SOLVE A SINGLE PROBLEM
-            const int pNumber = 38;
+            const int pNumber = 50;
             var sw = new Stopwatch();
             string pFullName = string.Concat("EulerProject.Problems.Problem", pNumber.ToString("D2"));
             var pDisplayName = pFullName.Substring(pFullName.LastIndexOf('.') + 1, pFullName.Length - 1 - pFullName.LastIndexOf('.'));
@@ -20,6 +20,7 @@ namespace EulerProject
                 sw.Start();
                 object answer = problem.Solve();
                 sw.Stop();
+                if (answer == null) answer = "ANSWER NOT SUPPLIED.";
                 Trace.WriteLine(string.Format("Answer: {0}. Solved in {1}ms.", answer, sw.ElapsedMilliseconds));
             }
             else
