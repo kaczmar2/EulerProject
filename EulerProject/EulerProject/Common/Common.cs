@@ -441,5 +441,28 @@ namespace EulerProject
             }
             return true;
         }
+
+        /// <summary>
+        /// Tests if a given number is a composite number
+        /// A composite number is a positive integer that has at least one positive divisor other than one or the number itself. 
+        /// In other words, a composite number is any positive integer greater than one that is not a prime number. 
+        /// </summary>
+        /// <param name="n">The number to test</param>
+        /// <returns>True if the number is a composite number</returns>
+        public static bool IsComposite(int n)
+        {
+            return n > 1 && !IsPrime(n);
+        }
+
+
+        /// <summary>
+        /// Tests to see if a number is odd.
+        /// </summary>
+        /// <param name="n">The number to test</param>
+        /// <returns>True if the number is odd</returns>
+        public static bool IsOdd(int n)
+        {
+            return n % 2 != 0;
+        }
     }
 }
