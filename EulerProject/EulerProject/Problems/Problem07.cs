@@ -8,20 +8,18 @@ namespace EulerProject.Problems
     {
         public object Solve()
         {
-            int termsFound = 0;
-            const int numTerms = 10001;
-            int testNumber = 1;
+            const int max = 10001;
+            int terms = 0;
+            int n = 2;
 
             do
             {
-                testNumber++;
-                if (Common.IsPrime(testNumber))
-                {
-                    termsFound++;
-                }
-            } while (termsFound < numTerms);
+                if (!Common.IsPrime(n)) continue;
+                terms++;
+                n = Common.GetNextPrime(n);
+            } while (terms < max);
 
-            return testNumber;
+            return n;
         }
     }
 }
