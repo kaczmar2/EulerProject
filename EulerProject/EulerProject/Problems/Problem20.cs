@@ -11,15 +11,14 @@ namespace EulerProject.Problems
         public object Solve()
         {
             const int num = 100;
-            var f = new BigInteger();
-            uint sum = 0;
+            int sum = 0;
 
-            f = Common.Factorial(num);
+            BigInteger f = Common.Factorial(num);
             var arr = f.ToString().ToCharArray();
 
             foreach (var c in arr)
             {
-                var i = uint.Parse(c.ToString(CultureInfo.InvariantCulture));
+                var i = int.Parse(c.ToString(CultureInfo.InvariantCulture));
                 sum += i;
             }
 
