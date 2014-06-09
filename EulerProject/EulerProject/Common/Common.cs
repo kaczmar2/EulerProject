@@ -102,13 +102,20 @@ namespace EulerProject
             }
         }
 
+        /// <summary>
+        /// Finds the factorial of n, n!, given n.
+        /// </summary>
+        /// <param name="n">The number to calculate the factorial value for</param>
+        /// <returns>n!</returns>
         public static BigInteger Factorial(BigInteger n)
         {
-            if (n == 0)
+            BigInteger res = 1;
+            while (n > 1)
             {
-                return 1;
+                res *= n;
+                n--;
             }
-            return n * Factorial(n - 1);
+            return res;
         }
 
         /// <summary>

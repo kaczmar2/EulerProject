@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Numerics;
+﻿using System.Numerics;
 
 namespace EulerProject.Problems
 {
@@ -10,20 +9,29 @@ namespace EulerProject.Problems
         /// </summary>
         public object Solve()
         {
+            const int min = 23;
             const int max = 100;
             const int target = 1000000;
-            var results = new List<BigInteger>();
+            int count = 0;
+            var f = new BigInteger[max + 1];
 
-            for (int n = 1; n <= max; n++)
+            // Precalulate and store factorials
+            for (int x = 0; x <= max; x++)
             {
-                for (int r = 1; r <= max; r++)
+                f[x] = Common.Factorial(x);
+            }
+
+            for (int n = min; n <= max; n++)
+            {
+                for (int r = 1; r <= n; r++)
                 {
-                    if (r > n) break;   // r can never be bigger than n; ie, you can't select 5 from 3.
-                    var c = Common.CalculateRFromN(r, n);
-                    if (c > target) results.Add(c);
+                    if (f[n] / (f[r] * f[n - r]) > target)
+                    {
+                        count++;
+                    }
                 }
             }
-            return results.Count; 
+            return count; 
         }
     }
 }
