@@ -480,5 +480,19 @@ namespace EulerProject
             }
             return i;
         }
+
+        /// <summary>
+        /// Calculate the number of ways there are to calculate r from n = nCr
+        /// </summary>
+        /// <param name="r">Tthe length of the combination</param>
+        /// <param name="n">The number to take combinations from</param>
+        /// <returns>C, the number of ways (combinations) to calculate r from n</returns>
+        public static BigInteger CalculateRFromN(int r, int n)
+        {
+            var bn = new BigInteger(n);
+            var br = new BigInteger(r);
+            BigInteger c = Factorial(bn) / (Factorial(br) * Factorial(bn - br));
+            return c;
+        }
     }
 }

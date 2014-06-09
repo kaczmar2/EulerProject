@@ -9,7 +9,7 @@ namespace EulerProject
         static void Main(string[] args)
         {
             // SOLVE A SINGLE PROBLEM
-            const int pNumber = 50;
+            const int pNumber = 53;
             var sw = new Stopwatch();
             string pFullName = string.Concat("EulerProject.Problems.Problem", pNumber.ToString("D2"));
             var pDisplayName = pFullName.Substring(pFullName.LastIndexOf('.') + 1, pFullName.Length - 1 - pFullName.LastIndexOf('.'));
